@@ -1,5 +1,6 @@
 package com.eslam.callkt
 
+import android.app.NotificationManager
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -18,7 +19,7 @@ class PhoneStateReceiver : BroadcastReceiver() {
                 Toast.makeText(context, "Incoming Call State", Toast.LENGTH_SHORT).show()
                 Toast.makeText(context, "Ringing State Number is -" + incomingNumber!!, Toast.LENGTH_SHORT).show()
                 Log.e("PhoneStateReceiver  ", "Ringing State Number is  : $incomingNumber")
-
+//                NotificationManager.sendNotification(incomingNumber,context)
 
             }
             if (state == TelephonyManager.EXTRA_STATE_OFFHOOK) {
