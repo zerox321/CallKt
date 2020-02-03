@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">CallKt</string>
+
     <string name="action_settings">Settings</string>
+
+    <string name="notification_channel_name">Notification Channel Name</string>
+
+    <string name="notification_channel_id" translatable="false">fcm_default_channel</string>
+
+    <string name="title_activity_home">HomeActivity</string>
 </resources>
