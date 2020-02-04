@@ -21,7 +21,7 @@ class PhoneStateReceiver : BroadcastReceiver() {
                 Toast.makeText(context, "Incoming Call State", Toast.LENGTH_SHORT).show()
                 Toast.makeText(
                     context,
-                    "Ringing State Number is -" + incomingNumber!!,
+                    "Ringing State Number is " + incomingNumber!!,
                     Toast.LENGTH_SHORT
                 ).show()
                 Log.e("PhoneStateReceiver  ", "Ringing State Number is  : $incomingNumber")

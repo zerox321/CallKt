@@ -44,7 +44,9 @@ override fun onCreateView(
 
 private fun initViewModel(binding: FragmentHomeBinding) {
     binding.viewModel = viewModel
+
     binding.executePendingBindings()
+
     binding.lifecycleOwner = this
 
 
