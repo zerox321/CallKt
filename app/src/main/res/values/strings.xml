@@ -8,4 +8,6 @@
     <string name="notification_channel_id" translatable="false">fcm_default_channel</string>
 
     <string name="title_activity_home">HomeActivity</string>
+
+
 </resources>

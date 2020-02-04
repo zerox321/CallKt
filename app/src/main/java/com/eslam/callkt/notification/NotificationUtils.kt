@@ -6,8 +6,8 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.BitmapFactory
 import androidx.core.app.NotificationCompat
-import com.eslam.callkt.ui.HomeActivity
 import com.eslam.callkt.R
+import com.eslam.callkt.ui.HomeActivity
 
 // Notification ID.
 private const val NOTIFICATION_ID = 0
@@ -20,7 +20,7 @@ private const val FLAGS = 0
  *
  * @param context, activity context.
  */
-fun NotificationManager.sendNotification(name: String,phone: String,description: String, applicationContext: Context) {
+fun NotificationManager.sendNotification(name: String, phone: String, applicationContext: Context) {
     // Create the content intent for the notification, which launches
     // this activity
     // TODO: Step 1.11 create intent
@@ -58,14 +58,14 @@ fun NotificationManager.sendNotification(name: String,phone: String,description:
         applicationContext.getString(R.string.notification_channel_id)
     )
 
-    // TODO: Step 1.8 use the new 'breakfast' notification channel
+        // TODO: Step 1.8 use the new 'breakfast' notification channel
 
-    // TODO: Step 1.3 set title, text and icon to builder
+        // TODO: Step 1.3 set title, text and icon to builder
         .setSmallIcon(R.mipmap.ic_launcher)
         .setContentTitle(name)
         .setContentText(phone)
 
-    // TODO: Step 1.13 set content intent
+        // TODO: Step 1.13 set content intent
         .setContentIntent(contentPendingIntent)
         .setAutoCancel(true)
 
@@ -73,12 +73,6 @@ fun NotificationManager.sendNotification(name: String,phone: String,description:
         .setStyle(bigPicStyle)
         .setLargeIcon(eggImage)
 
-        // TODO: Step 2.3 add snooze action
-        .addAction(
-            R.mipmap.ic_launcher,
-            description,
-            snoozePendingIntent
-        )
 
         // TODO: Step 2.5 set priority
         .setPriority(NotificationCompat.PRIORITY_HIGH)

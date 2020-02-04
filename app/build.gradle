@@ -28,7 +28,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    buildTypes.each {
+        it.buildConfigField 'String', 'BaseLink', '"http://kreazdessert.com/loyalityV2/api/"'
 
+    }
     dataBinding { enabled = true }
     compileOptions {
         sourceCompatibility = 1.8

@@ -16,22 +16,18 @@ object RetrofitAPI {
         .build()
 
     private val okHttp = OkHttpClient.Builder()
-        .connectTimeout(600, TimeUnit.SECONDS)
-        .readTimeout(500, TimeUnit.SECONDS)
-        .writeTimeout(500, TimeUnit.SECONDS)
-        .build()
-
-    private val retrofit = Retrofit.Builder()
-        .addConverterFactory(MoshiConverterFactory.create(moshi))
-        .addCallAdapterFactory(CoroutineCallAdapterFactory())
-        .client(okHttp)
-        .baseUrl("Base")
         .build()
 
 
-    val retrofitService : ServerApi by lazy {
-        retrofit.create(ServerApi::class.java)
+
+    fun getClient(baseURl: String): ServerApi {
+        val retrofit = Retrofit.Builder()
+            .addConverterFactory(MoshiConverterFactory.create(moshi))
+            .addCallAdapterFactory(CoroutineCallAdapterFactory())
+            .client(okHttp)
+            .baseUrl(baseURl)
+            .build()
+        return retrofit.create(ServerApi::class.java)
     }
-
 
 }
