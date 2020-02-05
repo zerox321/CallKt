@@ -1,3 +1,7 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="md_keylinesV">7dp</dimen>
+    <dimen name="mainFont">15sp</dimen>
+    <dimen name="secondFont">13sp</dimen>
+    <dimen name="thirdFont">8sp</dimen>
 </resources>

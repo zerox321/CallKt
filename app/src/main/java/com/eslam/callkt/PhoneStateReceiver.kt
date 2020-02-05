@@ -6,10 +6,10 @@ import android.content.Context
 import android.content.Intent
 import android.telephony.TelephonyManager
 import android.util.Log
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.eslam.callkt.internet.RetrofitAPI
 import com.eslam.callkt.notification.sendNotification
+import com.eslam.callkt.util.Pref.Companion.getStr
 import kotlinx.coroutines.*
 import java.io.IOException
 
@@ -25,40 +25,34 @@ class PhoneStateReceiver : BroadcastReceiver() {
             val state = intent.getStringExtra(TelephonyManager.EXTRA_STATE)
             val incomingNumber = intent.getStringExtra(TelephonyManager.EXTRA_INCOMING_NUMBER)
             if (state == TelephonyManager.EXTRA_STATE_RINGING) {
-                Toast.makeText(context, "Incoming Call State", Toast.LENGTH_SHORT).show()
-                Toast.makeText(
-                    context,
-                    "Ringing State Number is " + incomingNumber!!,
-                    Toast.LENGTH_SHORT
-                ).show()
-
-
-
-                Log.e(tag, " start  $incomingNumber")
 
                 uiScope.launch {
+
                     try {
+                        Log.e(tag, " start  $incomingNumber")
+
                         val baseURL = BuildConfig.BaseLink
 
                         callServer(context, baseURL, incomingNumber)
+
                     } catch (ex: IOException) {
+
                         try {
-                            val off = "http://10.0.0.159/loyalityV2/api/"
+                            val off = getStr(context, "offline")
                             callServer(context, off, incomingNumber)
                         } catch (ex: IOException) {
 
                         }
+
                     }
 
                 }
 
             }
-            if (state == TelephonyManager.EXTRA_STATE_OFFHOOK) {
-                Toast.makeText(context, "Call Received State", Toast.LENGTH_SHORT).show()
-            }
-            if (state == TelephonyManager.EXTRA_STATE_IDLE) {
-                Toast.makeText(context, "Call Idle State", Toast.LENGTH_SHORT).show()
-            }
+//            if (state == TelephonyManager.EXTRA_STATE_OFFHOOK) {
+//            }
+//            if (state == TelephonyManager.EXTRA_STATE_IDLE) {
+//            }
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -66,11 +60,12 @@ class PhoneStateReceiver : BroadcastReceiver() {
     }
 
     private suspend fun callServer(context: Context, baseURL: String, phone: String) {
-        Log.e(tag, " baseURL  $baseURL")
+
+        Log.e(tag, "callServer baseURL  $baseURL")
 
         val user = getUserTask(baseURL, phone)
 
-        Log.e(tag, " type  ${user.type}")
+        Log.e(tag, "callServer type  ${user.type}")
 
         if (user.type == "success")
             showNotification(context, phone, user.data!!.name!!)
@@ -81,7 +76,7 @@ class PhoneStateReceiver : BroadcastReceiver() {
 
     private fun showNotification(context: Context, phone: String, title: String) {
 
-        Log.e(tag, " title  $title")
+        Log.e(tag, "showNotification phone  $phone , title  $title")
 
         val notificationManager = ContextCompat.getSystemService(
             context,

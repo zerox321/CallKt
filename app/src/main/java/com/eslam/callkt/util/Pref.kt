@@ -34,14 +34,14 @@ class Pref {
         }
 
 
-        fun setBool(context: Context, key: String, value: Boolean) {
+        fun setBoolean(context: Context, key: String, value: Boolean) {
             val sharedPref = context.getSharedPreferences(PREFS_NAME, 0)
             val editor = sharedPref.edit()
             editor.putBoolean(key, value)
             editor.apply()
         }
 
-        fun getBool(context: Context, key: String): Boolean {
+        fun getBoolean(context: Context, key: String): Boolean {
             val prefs = context.getSharedPreferences(PREFS_NAME, 0)
             return prefs.getBoolean(key, false)
         }

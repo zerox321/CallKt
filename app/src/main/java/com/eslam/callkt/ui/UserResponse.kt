@@ -14,7 +14,6 @@ data class UserResponseData(
     @Json(name = "id") val id: String?,
     @Json(name = "mobile") val mobile: String?,
     @Json(name = "name") val name: String?,
+    @Json(name = "avatar") val avatar: String?,
     @Json(name = "notes") val notes: String?
-
-
 )

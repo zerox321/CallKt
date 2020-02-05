@@ -1,8 +1,9 @@
 package com.eslam.callkt.internet
 
 
-import com.eslam.callkt.ui.ConfigResponse
+import com.eslam.callkt.ui.home.ConfigResponse
 import com.eslam.callkt.ui.UserResponse
+import com.eslam.callkt.ui.home.ClientListResponse
 import kotlinx.coroutines.Deferred
 import retrofit2.http.*
 
@@ -13,7 +14,13 @@ interface ServerApi {
     fun getUserInfoAsync(
         @Query("type") type: String,
         @Query("do") number: String
-        ): Deferred<UserResponse>
+    ): Deferred<UserResponse>
+
+
+    @GET("index.php")
+    fun getClientsAsync(
+        @Query("type") type: String
+    ): Deferred<ClientListResponse>
 
 
     @FormUrlEncoded

@@ -7,6 +7,20 @@
     <fragment
         android:id="@+id/HomeActivityFragment"
         android:name="com.eslam.callkt.ui.home.HomeActivityFragment"
-        android:label="HomeActivityFragment"
-        tools:layout="@layout/fragment_home"/>
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_HomeActivityFragment_to_DetailFragment"
+            app:destination="@id/DetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/DetailFragment"
+        android:name="com.eslam.callkt.ui.home.detail.DetailFragment"
+        android:label="@string/action_settings"
+        tools:layout="@layout/detail_fragment"/>
 </navigation>

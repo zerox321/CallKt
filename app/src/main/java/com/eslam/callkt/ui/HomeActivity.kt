@@ -2,29 +2,48 @@ package com.eslam.callkt.ui
 
 import android.app.NotificationManager
 import android.os.Bundle
-import android.util.Log
-import com.google.android.material.snackbar.Snackbar
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.onNavDestinationSelected
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.eslam.callkt.R
 import com.eslam.callkt.notification.createNotificationChannel
 import com.eslam.callkt.notification.sendNotification
-import com.eslam.callkt.util.Pref
-import com.eslam.callkt.util.checkPermisions
-
+import com.eslam.callkt.util.checkPermissions
 import kotlinx.android.synthetic.main.activity_home.*
 
+
 class HomeActivity : AppCompatActivity() {
+    private val navController: NavController by lazy {
+        findNavController(R.id.nav_host_fragment)
+    }
+    private val appBarConfiguration: AppBarConfiguration by lazy {
+        AppBarConfiguration(navController.graph)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        fab.setOnClickListener { view ->
-           Log.e("ESLAM  :  " ,Pref.getStr(view.context, "offline"))
-
-        }
-        checkPermisions(this)
+//        fab.setOnClickListener { view ->
+//
+//            val notificationManager = ContextCompat.getSystemService(
+//                view.context,
+//                NotificationManager::class.java
+//            ) as NotificationManager
+//
+//            notificationManager.sendNotification(
+//                "Eslam Kamel",
+//                "01555892962",
+//                view.context
+//            )
+//        }
+        checkPermissions(this)
 
         createNotificationChannel(
             getString(R.string.notification_channel_id),
@@ -32,8 +51,19 @@ class HomeActivity : AppCompatActivity() {
             this
         )
 
+
         setSupportActionBar(toolbar)
+
+        setupActionBarWithNavController(navController, appBarConfiguration)
 
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
 }
+

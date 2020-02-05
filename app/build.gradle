@@ -86,4 +86,8 @@ dependencies {
     implementation "androidx.fragment:fragment-ktx:1.2.0"
     implementation 'androidx.fragment:fragment:1.2.0'
 
+    //Room
+    implementation 'androidx.room:room-runtime:2.2.3'
+    kapt 'androidx.room:room-compiler:2.2.3'
+    implementation 'androidx.room:room-ktx:2.2.3'
 }
