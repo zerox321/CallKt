@@ -47,8 +47,10 @@
                         android:layout_height="wrap_content"
                         android:padding="@dimen/md_keylinesV"
                         android:text="@{ViewModel.clientData.name}"
+                        app:drawableStartCompat="@drawable/ic_name_12dp"
+                        app:drawableLeftCompat="@drawable/ic_name_12dp"
+                        android:drawablePadding="@dimen/md_keylinesV"
                         android:textColor="@color/black"
-
                         android:textSize="@dimen/mainFont"
                         android:textStyle="bold" />
 
@@ -59,7 +61,9 @@
                         android:textColor="@color/black"
                         android:paddingStart="@dimen/md_keylinesV"
                         android:paddingEnd="@dimen/md_keylinesV"
-
+                        app:drawableStartCompat="@drawable/ic_phone_12dp"
+                        app:drawableLeftCompat="@drawable/ic_phone_12dp"
+                        android:drawablePadding="@dimen/md_keylinesV"
                         android:textSize="@dimen/secondFont" />
 
                     <androidx.appcompat.widget.AppCompatTextView
@@ -67,8 +71,10 @@
                         android:layout_height="wrap_content"
                         android:padding="@dimen/md_keylinesV"
                         android:text="@{ViewModel.clientData.email}"
+                        app:drawableStartCompat="@drawable/ic_email_12dp"
+                        app:drawableLeftCompat="@drawable/ic_email_12dp"
+                        android:drawablePadding="@dimen/md_keylinesV"
                         android:textColor="@color/black"
-
                         android:textSize="@dimen/secondFont" />
 
                     <androidx.appcompat.widget.AppCompatTextView
@@ -76,6 +82,9 @@
                         android:layout_height="wrap_content"
                         android:paddingBottom="@dimen/md_keylinesV"
                         android:text="@{ViewModel.clientData.notes}"
+                        app:drawableStartCompat="@drawable/ic_note_12dp"
+                        app:drawableLeftCompat="@drawable/ic_note_12dp"
+                        android:drawablePadding="@dimen/md_keylinesV"
                         android:textColor="@color/black"
                         android:paddingStart="@dimen/md_keylinesV"
                         android:paddingEnd="@dimen/md_keylinesV"
@@ -92,7 +101,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="@dimen/fab_margin"
-            android:onClick="@{(v)-> ViewModel.callAction(v,ViewModel.clientData.mobile)}"
+            android:onClick="@{(v)-> ViewModel.callAction(v,ViewModel.clientData.name,ViewModel.clientData.mobile)}"
             app:srcCompat="@drawable/ic_call" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

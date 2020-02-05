@@ -19,8 +19,8 @@ import com.eslam.callkt.R
 @BindingAdapter("loadImage")
 fun loadImage(target: ImageView, url: String?) {
     val requestOptions = RequestOptions()
-        .placeholder(R.drawable.ic_profle)
-        .error(R.drawable.ic_profle)
+        .placeholder(R.mipmap.ic_launcher_round)
+        .error(R.mipmap.ic_launcher_round)
         .diskCacheStrategy(DiskCacheStrategy.DATA)
         .circleCrop()
 

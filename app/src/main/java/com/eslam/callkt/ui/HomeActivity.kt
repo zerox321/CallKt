@@ -30,19 +30,7 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-//        fab.setOnClickListener { view ->
-//
-//            val notificationManager = ContextCompat.getSystemService(
-//                view.context,
-//                NotificationManager::class.java
-//            ) as NotificationManager
-//
-//            notificationManager.sendNotification(
-//                "Eslam Kamel",
-//                "01555892962",
-//                view.context
-//            )
-//        }
+
         checkPermissions(this)
 
         createNotificationChannel(

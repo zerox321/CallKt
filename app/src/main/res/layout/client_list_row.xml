@@ -43,7 +43,10 @@
                 android:layout_gravity="center"
                 android:text="@{Client.name}"
                 android:textColor="@color/black"
+                android:gravity="center"
                 android:textSize="@dimen/mainFont"
+                android:paddingEnd="@dimen/md_keylinesV"
+                android:paddingStart="@dimen/md_keylinesV"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatTextView
