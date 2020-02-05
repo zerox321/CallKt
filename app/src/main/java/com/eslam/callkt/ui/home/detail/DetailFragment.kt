@@ -1,25 +1,27 @@
 package com.eslam.callkt.ui.home.detail
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
-
-import com.eslam.callkt.R
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.navArgs
 import com.eslam.callkt.databinding.DetailFragmentBinding
+import com.eslam.callkt.room.RoomDB
 
 class DetailFragment : Fragment() {
+    private val args: DetailFragmentArgs by navArgs()
 
     private val viewModel: DetailViewModel by lazy {
+        val dao = RoomDB.getInstance(requireContext()).dao
+        val clientId = args.clientId
         val factory = object : ViewModelProvider.Factory {
             @Suppress("UNCHECKED_CAST")
             override fun <T : ViewModel?> create(modelClass: Class<T>): T {
                 if (modelClass.isAssignableFrom(DetailViewModel::class.java))
-                    return DetailViewModel() as T
+                    return DetailViewModel(dao, clientId) as T
                 throw IllegalArgumentException("unknown view model.")
             }
         }
@@ -38,6 +40,7 @@ class DetailFragment : Fragment() {
 
         return binding.root
     }
+
     private fun initViewModel(binding: DetailFragmentBinding) {
         binding.viewModel = viewModel
         binding.executePendingBindings()

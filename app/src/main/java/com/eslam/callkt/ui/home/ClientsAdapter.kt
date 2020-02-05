@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.eslam.callkt.R
 import com.eslam.callkt.databinding.ClientListRowBinding
-import com.eslam.callkt.ui.home.room.ClientEntity
+import com.eslam.callkt.room.ClientEntity
 
 class ClientsAdapter(val listener: ClickListener) :
     ListAdapter<ClientEntity, ClientsAdapter.ViewHolder>(DiffCall) {

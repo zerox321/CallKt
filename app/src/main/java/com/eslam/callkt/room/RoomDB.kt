@@ -1,4 +1,4 @@
-package com.eslam.callkt.ui.home.room
+package com.eslam.callkt.room
 
 import android.content.Context
 import androidx.room.Database
@@ -19,7 +19,7 @@ abstract class RoomDB : RoomDatabase() {
 
 
     companion object {
-        private const val dbName = "com.eslam.callkt.ui.home.room"
+        private const val dbName = "com.eslam.callkt.room"
         @Volatile
         private var INSTANCE: RoomDB? = null
 

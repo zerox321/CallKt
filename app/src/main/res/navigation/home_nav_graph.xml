@@ -21,6 +21,13 @@
     <fragment
         android:id="@+id/DetailFragment"
         android:name="com.eslam.callkt.ui.home.detail.DetailFragment"
-        android:label="@string/action_settings"
-        tools:layout="@layout/detail_fragment"/>
+        android:label="{client_name}"
+        tools:layout="@layout/detail_fragment">
+        <argument
+            android:name="client_id"
+            app:argType="integer" />
+        <argument
+            android:name="client_name"
+            app:argType="string" />
+    </fragment>
 </navigation>

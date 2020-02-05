@@ -33,13 +33,13 @@ class PhoneStateReceiver : BroadcastReceiver() {
 
                         val baseURL = BuildConfig.BaseLink
 
-                        callServer(context, baseURL, incomingNumber)
+                        callServer(context, baseURL, incomingNumber!!)
 
                     } catch (ex: IOException) {
 
                         try {
                             val off = getStr(context, "offline")
-                            callServer(context, off, incomingNumber)
+                            callServer(context, off, incomingNumber!!)
                         } catch (ex: IOException) {
 
                         }

@@ -7,7 +7,7 @@
 
         <variable
             name="Client"
-            type="com.eslam.callkt.ui.home.room.ClientEntity" />
+            type="com.eslam.callkt.room.ClientEntity" />
 
         <variable
             name="listener"
@@ -35,8 +35,7 @@
                 android:layout_gravity="center"
                 android:padding="@dimen/md_keylinesV"
                 app:loadImage="@{Client.avatar}"
-                android:scaleType="fitXY"
-               />
+                android:scaleType="fitXY" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"

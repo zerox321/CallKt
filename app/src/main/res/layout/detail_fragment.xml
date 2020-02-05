@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -12,8 +13,86 @@
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.home.detail.DetailFragment">
+        android:layout_height="match_parent">
 
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.home.detail.DetailFragment">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/md_keylinesV"
+
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/md_keylinesV"
+                    android:scaleType="fitXY"
+                    app:loadImage="@{ViewModel.clientData.avatar}" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:padding="@dimen/md_keylinesV">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/md_keylinesV"
+                        android:text="@{ViewModel.clientData.name}"
+                        android:textColor="@color/black"
+
+                        android:textSize="@dimen/mainFont"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{ViewModel.clientData.mobile}"
+                        android:textColor="@color/black"
+                        android:paddingStart="@dimen/md_keylinesV"
+                        android:paddingEnd="@dimen/md_keylinesV"
+
+                        android:textSize="@dimen/secondFont" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/md_keylinesV"
+                        android:text="@{ViewModel.clientData.email}"
+                        android:textColor="@color/black"
+
+                        android:textSize="@dimen/secondFont" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/md_keylinesV"
+                        android:text="@{ViewModel.clientData.notes}"
+                        android:textColor="@color/black"
+                        android:paddingStart="@dimen/md_keylinesV"
+                        android:paddingEnd="@dimen/md_keylinesV"
+                        android:textSize="@dimen/secondFont" />
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            android:onClick="@{(v)-> ViewModel.callAction(v,ViewModel.clientData.mobile)}"
+            app:srcCompat="@drawable/ic_call" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
