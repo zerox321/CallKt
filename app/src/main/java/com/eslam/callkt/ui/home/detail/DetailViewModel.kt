@@ -12,25 +12,26 @@ class DetailViewModel(dao: MyDao, clientId: Int) : ViewModel() {
     val clientData = dao.getClientData(clientId)
 
     fun notifyAction(v: View) {
-              val name:String?=clientData.value?.name
-        val phone:String?=clientData.value?.mobile
+        val name: String? = clientData.value?.name
+        val phone: String? = clientData.value?.mobile
         val notificationManager = ContextCompat.getSystemService(
             v.context,
-                NotificationManager::class.java
-            ) as NotificationManager
+            NotificationManager::class.java
+        ) as NotificationManager
 
-            notificationManager.sendNotification(
-                name!!,
-                phone!!,
-                "https://homefix.app/sfa/public/images/avatar.png",
-                v.context
-            )
+        notificationManager.sendNotification(
+            name!!,
+            phone!!,
+            "https://homefix.app/sfa/public/images/avatar.png",
+            v.context
+        )
     }
+
     fun callAction(v: View) {
 //        val name:String?=clientData.value?.name
-        val phone:String?=clientData.value?.mobile
+        val phone: String? = clientData.value?.mobile
 
-        call_action(v.context,phone!!)
+        call_action(v.context, phone!!)
 //
     }
 }

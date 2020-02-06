@@ -44,50 +44,50 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:drawablePadding="@dimen/md_keylinesV"
                         android:padding="@dimen/md_keylinesV"
                         android:text="@{ViewModel.clientData.name}"
-                        app:drawableStartCompat="@drawable/ic_name_12dp"
-                        app:drawableLeftCompat="@drawable/ic_name_12dp"
-                        android:drawablePadding="@dimen/md_keylinesV"
                         android:textColor="@color/black"
                         android:textSize="@dimen/mainFont"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:drawableLeftCompat="@drawable/ic_name_12dp"
+                        app:drawableStartCompat="@drawable/ic_name_12dp" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:drawablePadding="@dimen/md_keylinesV"
+                        android:paddingStart="@dimen/md_keylinesV"
+                        android:paddingEnd="@dimen/md_keylinesV"
                         android:text="@{ViewModel.clientData.mobile}"
                         android:textColor="@color/black"
-                        android:paddingStart="@dimen/md_keylinesV"
-                        android:paddingEnd="@dimen/md_keylinesV"
-                        app:drawableStartCompat="@drawable/ic_phone_12dp"
+                        android:textSize="@dimen/secondFont"
                         app:drawableLeftCompat="@drawable/ic_phone_12dp"
-                        android:drawablePadding="@dimen/md_keylinesV"
-                        android:textSize="@dimen/secondFont" />
+                        app:drawableStartCompat="@drawable/ic_phone_12dp" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:drawablePadding="@dimen/md_keylinesV"
                         android:padding="@dimen/md_keylinesV"
                         android:text="@{ViewModel.clientData.email}"
-                        app:drawableStartCompat="@drawable/ic_email_12dp"
-                        app:drawableLeftCompat="@drawable/ic_email_12dp"
-                        android:drawablePadding="@dimen/md_keylinesV"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/secondFont" />
+                        android:textSize="@dimen/secondFont"
+                        app:drawableLeftCompat="@drawable/ic_email_12dp"
+                        app:drawableStartCompat="@drawable/ic_email_12dp" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingBottom="@dimen/md_keylinesV"
-                        android:text="@{ViewModel.clientData.notes}"
-                        app:drawableStartCompat="@drawable/ic_note_12dp"
-                        app:drawableLeftCompat="@drawable/ic_note_12dp"
                         android:drawablePadding="@dimen/md_keylinesV"
-                        android:textColor="@color/black"
                         android:paddingStart="@dimen/md_keylinesV"
                         android:paddingEnd="@dimen/md_keylinesV"
-                        android:textSize="@dimen/secondFont" />
+                        android:paddingBottom="@dimen/md_keylinesV"
+                        android:text="@{ViewModel.clientData.notes}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/secondFont"
+                        app:drawableLeftCompat="@drawable/ic_note_12dp"
+                        app:drawableStartCompat="@drawable/ic_note_12dp" />
 
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -102,11 +102,11 @@
             android:layout_gravity="bottom|end"
             app:sdMainFabClosedSrc="@drawable/ic_more" />
 
-<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="bottom|end"-->
-<!--            android:onClick="@{(v)-> ViewModel.callAction(v,ViewModel.clientData.name,ViewModel.clientData.mobile)}"-->
-<!--            app:srcCompat="@drawable/ic_call" />-->
+        <!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_gravity="bottom|end"-->
+        <!--            android:onClick="@{(v)-> ViewModel.callAction(v,ViewModel.clientData.name,ViewModel.clientData.mobile)}"-->
+        <!--            app:srcCompat="@drawable/ic_call" />-->
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

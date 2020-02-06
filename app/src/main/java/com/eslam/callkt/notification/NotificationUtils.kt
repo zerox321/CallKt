@@ -68,7 +68,7 @@ fun NotificationManager.cancelNotifications() {
     cancelAll()
 }
 
-fun  getBitmapFromURL(strURL: String): Bitmap? {
+fun getBitmapFromURL(strURL: String): Bitmap? {
     val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
     StrictMode.setThreadPolicy(policy)
     return try {

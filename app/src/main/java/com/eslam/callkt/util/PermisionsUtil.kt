@@ -5,7 +5,7 @@ import android.app.Activity
 import android.content.pm.PackageManager
 import androidx.core.app.ActivityCompat
 
-fun checkPermissions(activity: Activity){
+fun checkPermissions(activity: Activity) {
     if (ActivityCompat.checkSelfPermission(
             activity,
             Manifest.permission.READ_PHONE_STATE

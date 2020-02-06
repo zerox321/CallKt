@@ -1,10 +1,8 @@
 package com.eslam.callkt.ui
 
-import android.app.NotificationManager
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -13,7 +11,6 @@ import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.eslam.callkt.R
 import com.eslam.callkt.notification.createNotificationChannel
-import com.eslam.callkt.notification.sendNotification
 import com.eslam.callkt.util.checkPermissions
 import kotlinx.android.synthetic.main.activity_home.*
 

@@ -1,9 +1,9 @@
 package com.eslam.callkt.internet
 
 
-import com.eslam.callkt.ui.home.ConfigResponse
 import com.eslam.callkt.ui.UserResponse
 import com.eslam.callkt.ui.home.ClientListResponse
+import com.eslam.callkt.ui.home.ConfigResponse
 import kotlinx.coroutines.Deferred
 import retrofit2.http.*
 

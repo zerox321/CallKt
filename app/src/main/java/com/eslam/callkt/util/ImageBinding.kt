@@ -1,19 +1,13 @@
 package com.eslam.callkt.util
 
 
-import android.widget.*
+import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
 import com.eslam.callkt.R
-
-
-
-
-
-
 
 
 @BindingAdapter("loadImage")

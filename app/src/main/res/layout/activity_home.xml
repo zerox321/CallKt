@@ -17,10 +17,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:title="@string/app_name"
-            app:titleTextAppearance="@style/ToolbarTextAppearance.Title"
             app:subtitleTextAppearance="@style/ToolbarTextAppearance.Subtitle"
-            app:theme="@style/ToolbarTheme" />
+            app:theme="@style/ToolbarTheme"
+            app:title="@string/app_name"
+            app:titleTextAppearance="@style/ToolbarTextAppearance.Title" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

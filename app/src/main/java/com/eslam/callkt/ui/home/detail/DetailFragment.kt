@@ -55,7 +55,8 @@ class DetailFragment : Fragment() {
                     viewModel.callAction(binding.speedDial)
                     binding.speedDial.close() // To close the Speed Dial with animation
                     return@OnActionSelectedListener true // false will close it without animation
-                }    R.id.ic_notifications -> {
+                }
+                R.id.ic_notifications -> {
                     viewModel.notifyAction(binding.speedDial)
                     binding.speedDial.close() // To close the Speed Dial with animation
                     return@OnActionSelectedListener true // false will close it without animation

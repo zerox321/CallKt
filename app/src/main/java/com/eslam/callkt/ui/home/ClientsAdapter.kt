@@ -41,7 +41,8 @@ class ClientsAdapter(val listener: ClickListener) :
                         .inflate(
                             LayoutInflater.from(parent.context),
                             R.layout.client_row_item,
-                            parent, false
+                            parent,
+                            false
                         )
                 )
             }

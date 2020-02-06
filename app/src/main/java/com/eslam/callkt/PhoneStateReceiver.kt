@@ -26,7 +26,11 @@ class PhoneStateReceiver : BroadcastReceiver() {
             val incomingNumber = intent.getStringExtra(TelephonyManager.EXTRA_INCOMING_NUMBER)
             if (state == TelephonyManager.EXTRA_STATE_RINGING) {
                 Toast.makeText(context, "Incoming Call State", Toast.LENGTH_SHORT).show()
-                Toast.makeText(context, "Ringing State Number is -" + incomingNumber!!, Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    context,
+                    "Ringing State Number is -" + incomingNumber!!,
+                    Toast.LENGTH_SHORT
+                ).show()
                 Log.e("PhoneStateReceiver  ", "Ringing State Number is  : $incomingNumber")
 
                 uiScope.launch {

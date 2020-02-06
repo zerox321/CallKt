@@ -12,10 +12,11 @@ import androidx.room.RoomDatabase
 
     ],
     version = 1,
-    exportSchema = false)
+    exportSchema = false
+)
 abstract class RoomDB : RoomDatabase() {
 
-    abstract val dao : MyDao
+    abstract val dao: MyDao
 
 
     companion object {

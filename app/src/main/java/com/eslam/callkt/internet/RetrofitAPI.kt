@@ -6,7 +6,6 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import java.util.concurrent.TimeUnit
 
 
 object RetrofitAPI {
@@ -17,7 +16,6 @@ object RetrofitAPI {
 
     private val okHttp = OkHttpClient.Builder()
         .build()
-
 
 
     fun getClient(baseURl: String): ServerApi {
