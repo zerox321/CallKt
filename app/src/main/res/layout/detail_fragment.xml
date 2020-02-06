@@ -24,7 +24,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/md_keylinesV"
-
                 android:orientation="horizontal">
 
                 <androidx.appcompat.widget.AppCompatImageView
@@ -96,12 +95,19 @@
             </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.core.widget.NestedScrollView>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
+        <com.leinardi.android.speeddial.SpeedDialView
+            android:id="@+id/speedDial"
             android:layout_width="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:layout_margin="@dimen/fab_margin"
-            android:onClick="@{(v)-> ViewModel.callAction(v,ViewModel.clientData.name,ViewModel.clientData.mobile)}"
-            app:srcCompat="@drawable/ic_call" />
+            app:sdMainFabClosedSrc="@drawable/ic_more" />
+
+<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="bottom|end"-->
+<!--            android:onClick="@{(v)-> ViewModel.callAction(v,ViewModel.clientData.name,ViewModel.clientData.mobile)}"-->
+<!--            app:srcCompat="@drawable/ic_call" />-->
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

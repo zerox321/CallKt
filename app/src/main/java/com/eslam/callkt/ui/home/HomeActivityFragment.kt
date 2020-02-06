@@ -54,6 +54,7 @@ class HomeActivityFragment : Fragment() {
                 viewModel.adapter.submitList(it)
             }
         }
+
     }
 
 }

@@ -20,7 +20,12 @@ import java.util.*
 private const val NOTIFICATION_ID = 0
 
 
-fun NotificationManager.sendNotification(name: String, phone: String, applicationContext: Context) {
+fun NotificationManager.sendNotification(
+    name: String,
+    phone: String,
+    avatar: String,
+    applicationContext: Context
+) {
 
     val contentIntent = Intent(applicationContext, HomeActivity::class.java)
 
@@ -31,11 +36,11 @@ fun NotificationManager.sendNotification(name: String, phone: String, applicatio
         PendingIntent.FLAG_UPDATE_CURRENT
     )
 
-    val eggImage = getBitmapFromURL("https://homefix.app/sfa/public/images/avatar.png")
+//    val eggImage = getBitmapFromURL(avatar)
 
-    val bigPicStyle = NotificationCompat.BigPictureStyle()
-        .bigPicture(eggImage)
-        .bigLargeIcon(null)
+//    val bigPicStyle = NotificationCompat.BigPictureStyle()
+//        .bigPicture(eggImage)
+//        .bigLargeIcon(null)
 
 
     val builder = NotificationCompat.Builder(
@@ -49,8 +54,8 @@ fun NotificationManager.sendNotification(name: String, phone: String, applicatio
         .setContentText(phone)
         .setContentIntent(contentPendingIntent)
         .setAutoCancel(true)
-        .setStyle(bigPicStyle)
-        .setLargeIcon(eggImage)
+//        .setStyle(bigPicStyle)
+//        .setLargeIcon(eggImage)
         .setPriority(NotificationCompat.PRIORITY_HIGH)
 
     notify(Random().nextInt(), builder.build())
@@ -60,7 +65,7 @@ fun NotificationManager.cancelNotifications() {
     cancelAll()
 }
 
-fun getBitmapFromURL(strURL: String): Bitmap? {
+fun  getBitmapFromURL(strURL: String): Bitmap? {
     val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
     StrictMode.setThreadPolicy(policy)
     return try {

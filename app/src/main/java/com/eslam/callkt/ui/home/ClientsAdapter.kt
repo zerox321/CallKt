@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.eslam.callkt.R
-import com.eslam.callkt.databinding.ClientListRowBinding
+import com.eslam.callkt.databinding.ClientRowItemBinding
 import com.eslam.callkt.room.ClientEntity
 
 class ClientsAdapter(val listener: ClickListener) :
@@ -32,7 +32,7 @@ class ClientsAdapter(val listener: ClickListener) :
         }
     }
 
-    class ViewHolder(private val binding: ClientListRowBinding) :
+    class ViewHolder(private val binding: ClientRowItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         companion object {
             fun from(parent: ViewGroup): ViewHolder {
@@ -40,7 +40,7 @@ class ClientsAdapter(val listener: ClickListener) :
                     DataBindingUtil
                         .inflate(
                             LayoutInflater.from(parent.context),
-                            R.layout.client_list_row,
+                            R.layout.client_row_item,
                             parent, false
                         )
                 )

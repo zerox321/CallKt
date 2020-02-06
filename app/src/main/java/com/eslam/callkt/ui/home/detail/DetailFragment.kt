@@ -8,8 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
+import com.eslam.callkt.R
 import com.eslam.callkt.databinding.DetailFragmentBinding
 import com.eslam.callkt.room.RoomDB
+import com.leinardi.android.speeddial.SpeedDialView
 
 class DetailFragment : Fragment() {
     private val args: DetailFragmentArgs by navArgs()
@@ -45,7 +47,26 @@ class DetailFragment : Fragment() {
         binding.viewModel = viewModel
         binding.executePendingBindings()
         binding.lifecycleOwner = this
+
+        binding.speedDial.inflate(R.menu.menu_client)
+        binding.speedDial.setOnActionSelectedListener(SpeedDialView.OnActionSelectedListener { actionItem ->
+            when (actionItem.id) {
+                R.id.action_call -> {
+                    viewModel.callAction(binding.speedDial)
+                    binding.speedDial.close() // To close the Speed Dial with animation
+                    return@OnActionSelectedListener true // false will close it without animation
+                }    R.id.ic_notifications -> {
+                    viewModel.notifyAction(binding.speedDial)
+                    binding.speedDial.close() // To close the Speed Dial with animation
+                    return@OnActionSelectedListener true // false will close it without animation
+                }
+
+            }
+            false
+        })
+
     }
+
 
 }
 

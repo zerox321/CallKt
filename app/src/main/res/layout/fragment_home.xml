@@ -32,8 +32,8 @@
                 android:scrollbars="vertical"
                 app:adapter="@{ViewModel.adapter}"
                 app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
-                app:spanCount="2"
-                tools:listitem="@layout/client_list_row" />
+                app:spanCount="@integer/itemCount"
+                tools:listitem="@layout/client_row_item" />
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

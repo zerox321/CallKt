@@ -1,13 +1,14 @@
 <resources>
     <string name="app_name">Kreaz</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="action_call">Call</string>
 
     <string name="notification_channel_name">Notification Channel Name</string>
 
     <string name="notification_channel_id" translatable="false">fcm_default_channel</string>
 
     <string name="title_activity_home">HomeActivity</string>
+    <string name="ic_notifications">Notification</string>
 
 
 </resources>
