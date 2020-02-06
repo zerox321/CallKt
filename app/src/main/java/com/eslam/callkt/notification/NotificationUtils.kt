@@ -37,10 +37,13 @@ fun NotificationManager.sendNotification(
     )
 
 //    val eggImage = getBitmapFromURL(avatar)
-
-//    val bigPicStyle = NotificationCompat.BigPictureStyle()
-//        .bigPicture(eggImage)
-//        .bigLargeIcon(null)
+    val eggImage = BitmapFactory.decodeResource(
+        applicationContext.resources,
+        R.drawable.ic_profle
+    )
+    val bigPicStyle = NotificationCompat.BigPictureStyle()
+        .bigPicture(eggImage)
+        .bigLargeIcon(null)
 
 
     val builder = NotificationCompat.Builder(
@@ -54,8 +57,8 @@ fun NotificationManager.sendNotification(
         .setContentText(phone)
         .setContentIntent(contentPendingIntent)
         .setAutoCancel(true)
-//        .setStyle(bigPicStyle)
-//        .setLargeIcon(eggImage)
+        .setStyle(bigPicStyle)
+        .setLargeIcon(eggImage)
         .setPriority(NotificationCompat.PRIORITY_HIGH)
 
     notify(Random().nextInt(), builder.build())
